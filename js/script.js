@@ -46,10 +46,9 @@ function flipCard(){
         return false
     }    
     secondCard = this  
-   
+
     checkedForMatch();  
 }
-
 
 
 function checkedForMatch(){
@@ -86,14 +85,14 @@ function disableCard(){
     
 }
 
-function shuffle(){
+(function shuffle(){
     
     cards.forEach(card => {
         let rand = Math.floor(Math.random() * 12);
         card.style.order = rand;
     });
 
-}shuffle();
+})();
 
 function resetCards(isMatch){
     if(isMatch){
@@ -103,18 +102,18 @@ function resetCards(isMatch){
     [firstCard, secondCard, lockCards] = [null, null, false];
 }
 
-function removeflipCards(){
-   
+function removeflipCards(){  
 
     setTimeout(() => {
         cards.forEach(rem => {
             rem.classList.remove('flip');
         })
+        acertos.innerText = '0'
         carregaClick();
         shuffle();
-        acertos.innerText = '0'
-
     }, 1000)
+
+    
 }
 
 function carregaClick(){
