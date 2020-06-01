@@ -5,13 +5,13 @@ let cardHTML = ''; /* variável que recebera os elementos html que serão carreg
 
 
 /* Esta função carrega o nome das imagens em uma array */
-function chargerImages(){
+(function chargerImages(){
     let s = 1
     for(let i=0; i<6; i++){
         images[i] = `c${s}.svg`
         s++;
     }
-} chargerImages();
+})()
 
 
 /* Esta função vai varrer a Array aonde esta os nomes das imagens 
@@ -116,6 +116,6 @@ function removeflipCards(){
     
 }
 
-function carregaClick(){
+(function carregaClick(){
 cards.forEach(card => card.addEventListener('click', flipCard));
-}carregaClick();
+})();
